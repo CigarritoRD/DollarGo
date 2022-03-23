@@ -1,0 +1,553 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,700;1,400&display=swap');
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+*, 
+*:after, 
+*:before{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: rgb(255,210,105);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: linear-gradient(180deg, rgb(251, 178, 7) 0%, rgb(255, 217, 155) 100%);
+    backdrop-filter: blur(6px) opacity(85%);
+    font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+    overflow-x:hidden;
+
+}
+
+.fa-solid{
+    color: gold;
+}
+.videodefondo{
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    position: relative;
+    max-height: 60rem;
+    z-index: 60;
+}
+.videodefondo video{
+    z-index: 30;
+    
+}
+
+.cover {
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.431);
+}
+.cover h1{
+    font-size: 5rem;
+}
+.cover p{
+    font-size: 2.4rem;
+    letter-spacing: .5rem;
+    margin-top: 6rem;
+    margin-bottom: 8rem;
+    
+}
+.cover a{
+    cursor: pointer;
+    background-color: gold;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    color: white;
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: bold;
+    z-index: 60;
+    transition: .3s;
+}
+.cover a:hover{
+    background-color:#000;
+}
+
+.hero{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    background-color: white;
+    border-radius: 1rem;
+}
+
+@media (min-width: 768px ) {
+    .hero{
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+.hero-info-content{
+    text-align: left;
+    padding: 1rem;
+}
+
+.hero-info-content h1{
+    text-align: center;
+    margin:2rem;
+}
+
+.hero-info-content p {
+    margin: 2rem;
+}
+
+.hero img{
+    max-width: 500px;
+    border-radius: 0 1rem 1rem 0rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000;
+    min-height: 8vh;
+    padding: 1rem;
+    box-shadow: 0 .1rem 10px 1px rgba(128 128 128 /0.5);
+    z-index: 99;
+}
+
+.logo {
+    letter-spacing: .5rem;
+    margin-left: 2rem;
+    text-transform: capitalize;
+    font-size: 4rem;
+    font-weight: bold;
+    color: gold;
+    text-shadow: .1rem .1rem .2rem black;
+
+}
+
+.logo-link{
+    text-decoration: none;
+    color: gold;
+}
+
+.logo span{
+    font-size: 4.5rem;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.navs-links{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    z-index: 1001;
+}
+
+
+@media (max-width: 990px) {
+    .navs-links{
+        width: 60%;
+    }
+}
+
+.navs-links li{
+    list-style:none;
+}
+
+.navs-links li a{
+    text-transform: capitalize;
+    text-decoration: none;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    font-size: 1.8rem;
+    color:gold;
+    text-decoration: none;
+    transform: translateX(100%);
+    transition: .1s ease-in;
+  
+}
+
+.navs-links li a:hover{
+    color:white;
+    letter-spacing: .2rem;
+}
+#login{
+    border: 1px solid gold;
+    padding:1rem;
+}
+.hamburgesa{
+    display: none;
+    cursor: pointer;
+}
+
+.hamburgesa div{
+    width: 2.5rem;
+    height: .3rem;
+    background-color: gold;
+    margin:.5rem;
+    transition: all .2s;
+}
+
+@media (max-width:768px){
+    .hamburgesa{
+        width: 3rem;
+        height: 3rem;
+        display: block;
+        text-align: center;
+    }
+    .navs-links{
+        position: absolute;
+        top: 8vh;
+        right:0;
+        height: 50vh;
+
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        background-color:rgb(0, 0, 0);
+        transform: translateX(100%);
+        transition: transform .2s ease-in;
+        
+    }
+    .navs-links li{
+        opacity: 0;
+    }
+}
+
+.navs-links.active{
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from   {
+        opacity: 0.5;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    
+}
+
+.cruz .line1{
+transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.cruz .line2{
+    opacity: 0;
+}
+
+.cruz .line3{
+    transform: rotate(45deg) translate(-5px, -6px); 
+}
+
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.main{
+    margin-top: 5rem;
+}
+
+.contenedor-planes{
+    margin-top: 5rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .contenedor-planes{
+        flex-direction: row;
+    }
+}
+
+.planes h3{
+    text-align: center;
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+
+.planes-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 2rem;
+    box-shadow: 0rem .5rem .5rem .5rem rgb(0 0 0 /.2);
+    margin: 2rem 1rem;
+    border: 2px solid gray;
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.planes-titulo{
+    border-radius: .5rem;
+    background-color: rgb(0 0 0 );
+    width: 100%;
+}
+
+.planes-card h3{
+    text-align: center;
+    font-size: 4rem;
+    color: gold;
+    text-shadow: 1px 2px 10px gray;
+    letter-spacing: .5rem;
+}
+
+.planes-card p{
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    color: rgb(54, 54, 54);
+ }
+
+.planes-card span{
+    font-size: 8rem;
+}
+
+.planes-card a{
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 3rem;
+    text-decoration: none;
+    background-color: #000000;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    color: #f8f6fa;
+    width: 100%;
+    transition: .3s;
+ } 
+
+ .planes-card li{
+    letter-spacing: 2px;
+    font-size: 1.8rem;
+    padding: .5rem 0;
+    text-transform: capitalize;
+
+ }
+
+ .planes-card a:hover{
+    background-color:gold;
+    color: black;
+    letter-spacing: .5rem;
+    box-shadow: 0 .5rem 1rem 1rem lightgray;
+ }
+
+
+.form{
+    background-color: white;
+    margin: 5rem 1rem;
+     padding: 5rem;
+     box-shadow: 0rem 1rem 1rem 1rem rgb(0 0 0 /.4);
+     border-radius: .5rem;
+ }
+ .form fieldset{
+     border: none;
+ }
+ .form legend{
+     font-size: 4rem;
+     text-align: center;
+     font-weight: 700;
+ }
+.form label{
+    display: block;
+    font-size: 2rem;
+    margin-top: 3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.form input{
+    display: block;
+    width: 100%;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: .5rem;
+    border: 1px solid gray;
+
+ }
+ .btn-submit{
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 3rem;
+    text-decoration: none;
+    background-color: #000000;
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    color: #f8f6fa;
+    width: 100%;
+    transition: .3s;
+    margin-top: 5rem;
+    border: none;
+ }
+ .btn-submit:hover{
+    background-color:gold;
+    color: black;
+    letter-spacing: .5rem;
+    box-shadow: 0 .5rem 1rem 1rem lightgray;
+    
+}
+.form input::placeholder{
+    font-size: 1.8rem;
+}
+.faq{
+    background-color: white;
+    padding: 5rem;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 80rem;
+    margin-top: 5rem;
+    border-radius: 2rem;
+    box-shadow: 0rem 1rem 1rem 1rem rgb(0 0 0 /.2);
+}
+.faq h1{
+    margin-bottom: 5rem;
+}
+.faq li{
+    list-style: none;
+}
+.faq h4{
+    font-size: 4rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+
+}
+
+.faq p{
+    font-size: 2rem;
+}
+
+.contenido-contacto{
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+.contenido-contacto h1{
+    text-align: center;
+    margin:2rem 0;
+}
+
+.contenido-contacto form{
+    min-width:50rem;
+    background-color: white;
+    padding: 4rem;
+    border-radius: 1rem;
+    box-shadow: 0rem .5rem .5rem .5rem rgb(0 0 0 /.2);
+}
+
+.contenido-contacto form label{
+    display: block;
+    font-weight: bold;
+    
+}
+
+.contenido-contacto form input{
+    display: block;
+    font-weight: bold;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.contenido-contacto form textarea{
+    display: block;
+    height: 20rem;
+    width: 100%;
+    
+}
+.btn-contacto{
+    display: inline-block;
+    width: auto;
+    margin-top: 3rem;
+}
+
+.login-btn{
+    border: solid 1px gold;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.login-container{
+    height: 50vh;
+    margin: 5rem;
+    margin-bottom: 10rem;
+    min-width: 350px;
+}
+
+.formularioLogin{
+    margin: 0 auto;
+    max-width: 40rem;
+    padding: 3rem;
+    background-color: white;
+    box-shadow: 0rem .5rem .5rem .5rem rgb(0 0 0 /.2);
+}
+.formularioLogin h2{
+    margin-bottom: 2rem;
+}
+.formularioLogin label{
+    display: block;
+    width: 100%;
+}
+
+.formularioLogin input{
+    display: block;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+.formularioLogin input::placeholder{
+    font-size: 1.6rem;
+}
+
+.formularioLogin .btn{
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    letter-spacing: .2rem;
+    transition: ease .2s;
+    font-weight: bold;
+
+}
+.formularioLogin .btn:hover{
+    background-color: gold;
+    color: rgb(44, 44, 44);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer{
+ background-color: black;
+ color: white;
+ font-size: 2rem;
+ padding: 2rem;
+ text-align: center;
+}
